@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_qlsp"
+            android:title="Quản lý sản phẩm"
+            android:icon="@drawable/ic_sanpham"/>
+        <item android:id="@+id/nav_qllsp"
+            android:title="Quản lý loại sản phẩm"
+            android:icon="@drawable/ic_loaisanpham"/>
+        <item android:id="@+id/nav_qldh"
+            android:title="Quản lý đơn hàng"
+            android:icon="@drawable/ic_donhang"/>
+        <item android:id="@+id/nav_qlnv"
+            android:title="Quản lý nhân viên"
+            android:icon="@drawable/ic_nhanvien"/>
+    </group>
+
+    <item android:id="@+id/nav_thongke"
+        android:title="Thống kê">
+        <menu>
+            <item android:id="@+id/nav_top"
+                android:title="Top sản phẩm bán chạy"
+                android:icon="@drawable/ic_top"/>
+            <item android:id="@+id/nav_doanhthu"
+                android:title="Doanh thu"
+                android:icon="@drawable/ic_doanhthu"/>
+        </menu>
+    </item>
+
+    <item android:title="Người dùng">
+        <menu>
+            <item android:id="@+id/nav_thongtincanhan"
+                android:title="Thông tin cá nhân"
+                android:icon="@drawable/ic_thongtincanhan"/>
+            <item android:id="@+id/nav_dangxuat"
+                android:title="Đăng xuất"
+                android:icon="@drawable/ic_dangxuat"/>
+        </menu>
+    </item>
+</menu>
