@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Ung dung ban tra sua</string>
+
+    <string name="nav_qlsp">Quản lý sản phẩm</string>
+    <string name="nav_qllsp">Quản lý loại sản phẩm</string>
+    <string name="nav_qldh">Quản lý đơn hàng</string>
+    <string name="nav_qlnv">Quản lý nhân viên</string>
+    <string name="nav_top">Top sản phẩm bán chạy</string>
+    <string name="nav_doanhthu">Doanh thu</string>
+    <string name="nav_thongtincanhan">Thông tin cá nhân</string>
+    <string name="nav_dangxuat">Đăng xuất</string>
+
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+    <string name="sign_up"><u>Sign up</u></string>
+    <string name="sign_in"><u>Sign In</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
