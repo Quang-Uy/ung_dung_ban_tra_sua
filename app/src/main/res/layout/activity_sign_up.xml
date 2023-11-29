@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud"
+    android:background="@drawable/bg2"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Đăng Ký"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Điền thông tin của bạn bên dưới"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="normal|italic"
             android:textSize="18sp"/>
     </LinearLayout>
@@ -89,7 +89,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Sign up"
+        android:text="Đăng ký"
         android:textSize="18dp"
         android:background="@drawable/custom_button_login"
         app:backgroundTint="@null"/>
@@ -105,16 +105,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
-            android:text="Already have an account?"
+            android:text="Bạn đã có tài khoản ?"
             android:textSize="17sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/tv_sign_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_in"
-            android:textColor="#6C3428"
+            android:textColor="#E8C09B"
             android:textSize="20sp"
             android:textStyle="italic|bold"/>
 

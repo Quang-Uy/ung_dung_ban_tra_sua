@@ -50,13 +50,13 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
             tv_maSanPham = v.findViewById(R.id.tv_MaSanPham);
             tv_maSanPham.setText("Mã sản phẩm: "+item.getMaTraSua());
             tv_tenSanPham = v.findViewById(R.id.tv_tenSanPham);
-            tv_tenSanPham.setText("Tên sản phẩm: "+item.getTenTraSua());
+            tv_tenSanPham.setText("Sản phẩm: "+item.getTenTraSua());
             tv_Loai = v.findViewById(R.id.tv_Loai);
-            tv_Loai.setText("Loại sản phẩm: "+loaiSanPham.getTenLoai());
+            tv_Loai.setText("Loại: "+loaiSanPham.getTenLoai());
             tv_soLuong = v.findViewById(R.id.tv_SoLuong);
-            tv_soLuong.setText("Số lượng tồn: "+item.getSoLuongKho());
+            tv_soLuong.setText("Số lượng kho: "+item.getSoLuongKho());
             tv_gia = v.findViewById(R.id.tv_Gia);
-            tv_gia.setText("Giá: "+item.getGia());
+            tv_gia.setText("Giá: "+item.getGia() + " VNĐ");
 
             imgDel = v.findViewById(R.id.imgDeleteSanPham);
         }

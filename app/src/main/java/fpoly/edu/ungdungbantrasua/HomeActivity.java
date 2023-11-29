@@ -35,8 +35,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_QLNV = 3;
     private static final int FRAGMENT_TOP = 4;
     private static final int FRAGMENT_DOANHTHU = 5;
-    private static final int FRAGMENT_THONGTINCANHAN = 6;
-    private static final int FRAGMENT_DANGXUAT = 7;
+    private static final int FRAGMENT_DANGXUAT = 6;
 
     private int mCurrenFragment = FRAGMENT_QLSP;
     String role;
@@ -101,11 +100,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             if (mCurrenFragment != FRAGMENT_DOANHTHU) {
                 replaceFragment(new DoanhThuFragment());
                 mCurrenFragment = FRAGMENT_DOANHTHU;
-            }
-        } else if (id == R.id.nav_thongtincanhan) {
-            if (mCurrenFragment != FRAGMENT_THONGTINCANHAN) {
-                replaceFragment(new ThongTinCaNhanFragment());
-                mCurrenFragment = FRAGMENT_THONGTINCANHAN;
             }
         } else if (id == R.id.nav_dangxuat) {
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));

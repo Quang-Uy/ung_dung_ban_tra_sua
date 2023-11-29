@@ -14,8 +14,6 @@ import android.widget.Toast;
 
 import fpoly.edu.ungdungbantrasua.DAO.AdminDAO;
 import fpoly.edu.ungdungbantrasua.DAO.KhachHangDAO;
-import fpoly.edu.ungdungbantrasua.DAO.NhanVienDAO;
-import fpoly.edu.ungdungbantrasua.DTO.Admin;
 
 public class LoginActivity extends AppCompatActivity {
 
