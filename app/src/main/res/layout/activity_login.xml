@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bg"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
@@ -14,13 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đăng Nhập"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textSize="26sp"/>
@@ -29,15 +29,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hi! Chào mừng trở lại"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="normal|italic"
             android:textSize="18sp"/>
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_marginTop="140dp">
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp">
 
         <EditText
             android:id="@+id/edt_login_ten"
@@ -52,7 +52,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         app:passwordToggleEnabled="true"
         android:layout_marginTop="5dp">
 
@@ -78,16 +78,26 @@
             android:id="@+id/remember_pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="-15dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Nhớ mật khẩu"
-            android:textSize="18sp"
-            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textColor="@color/black"
             android:textStyle="italic|bold"/>
+
+        <Spinner
+            android:id="@+id/spinner_role"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="#6C3428"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"/>
+
     </LinearLayout>
 
     <Button
@@ -95,7 +105,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Đăng nhập"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:background="@drawable/custom_button_login"
         app:backgroundTint="@null"/>
 
@@ -111,16 +121,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:text="Bạn chưa có tài khoản ?"
-            android:textSize="17sp"
-            android:textColor="@color/white"/>
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_up"
-            android:textColor="#E8C09B"
-            android:textSize="20sp"
+            android:textColor="#6C3428"
+            android:textSize="16sp"
             android:textStyle="italic|bold"/>
 
     </LinearLayout>

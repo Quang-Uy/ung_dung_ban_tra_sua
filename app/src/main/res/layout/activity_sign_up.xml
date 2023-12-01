@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bg"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
@@ -14,14 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Đăng Ký"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -29,15 +29,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Điền thông tin của bạn bên dưới"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="normal|italic"
             android:textSize="18sp"/>
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp">
+        android:layout_height="60dp"
+        android:layout_marginTop="90dp">
 
         <EditText
             android:id="@+id/edt_signup_tendangnhap"
@@ -52,7 +52,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="5dp">
 
         <EditText
@@ -68,7 +68,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         app:passwordToggleEnabled="true"
         android:layout_marginTop="5dp">
 
@@ -83,6 +83,13 @@
             android:paddingLeft="10dp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinner_role"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_button" />
 
     <Button
         android:id="@+id/btn_signup"
@@ -106,16 +113,16 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:text="Bạn đã có tài khoản ?"
-            android:textSize="17sp"
-            android:textColor="@color/white"/>
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_sign_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_in"
-            android:textColor="#E8C09B"
-            android:textSize="20sp"
+            android:textColor="#6C3428"
+            android:textSize="17sp"
             android:textStyle="italic|bold"/>
 
     </LinearLayout>

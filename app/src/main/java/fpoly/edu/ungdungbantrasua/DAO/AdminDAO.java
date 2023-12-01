@@ -14,9 +14,10 @@ import fpoly.edu.ungdungbantrasua.Database.DbHelper;
 
 public class AdminDAO {
     private SQLiteDatabase db;
+    DbHelper dbHelper;
 
     public AdminDAO(Context context) {
-        DbHelper dbHelper = new DbHelper(context);
+        dbHelper = new DbHelper(context);
         db = dbHelper.getWritableDatabase();
     }
 
@@ -25,6 +26,7 @@ public class AdminDAO {
         values.put("maAdmin", obj.getMaAdmin());
         values.put("haTen", obj.getHoTen());
         values.put("matKhau", obj.getMatKhau());
+        values.put("role", obj.getRole());
         long check = db.insert("Admin", null, values);
         return check != 1;
     }
@@ -33,6 +35,7 @@ public class AdminDAO {
         ContentValues values = new ContentValues();
         values.put("hoTen", obj.getHoTen());
         values.put("matKhau", obj.getMatKhau());
+        values.put("role", obj.getRole());
         return db.update("Admin", values, "maAdmin=?", new String[]{obj.getMaAdmin()});
     }
 
@@ -50,6 +53,7 @@ public class AdminDAO {
             obj.setMaAdmin(c.getString(c.getColumnIndex("maAdmin")));
             obj.setHoTen(c.getString(c.getColumnIndex("hoTen")));
             obj.setMatKhau(c.getString(c.getColumnIndex("matKhau")));
+            obj.setRole(Integer.parseInt(c.getString(c.getColumnIndex("role"))));
             list.add(obj);
         }
         return list;
@@ -68,13 +72,30 @@ public class AdminDAO {
         return list.get(0);
     }
 
-    //Check login
-    public int checkLogin(String id, String password) {
-        String sql = "SELECT * FROM Admin WHERE maAdmin=? AND matKhau=?";
-        List<Admin> list = getData(sql, id, password);
-        if (list.size() == 0) {
-            return -1;
+    public boolean checkLogin(String id, String password, String role) {
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        String sql = "SELECT * FROM Admin WHERE maAdmin=? AND matKhau=? AND role=?";
+        String[] selectionArgs = new String[]{id, password, role};
+        Cursor cursor = sqLiteDatabase.rawQuery(sql, selectionArgs);
+        boolean result = cursor.getCount() > 0;
+        return result;
+    }
+
+    //Sign up
+    public boolean Register(String maAdmin, String hoTen, String matKhau, String role) {
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("maAdmin", maAdmin);
+        contentValues.put("hoTen", hoTen);
+        contentValues.put("matKhau", matKhau);
+        contentValues.put("role", role);
+
+        long check = db.insert("Admin", null, contentValues);
+        if (check != -1) {
+            return true;
+        } else {
+            return false;
         }
-        return 1;
+
     }
 }

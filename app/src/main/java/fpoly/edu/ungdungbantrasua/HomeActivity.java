@@ -11,20 +11,18 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-import fpoly.edu.ungdungbantrasua.Fragment.DoanhThuFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.DonHangFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.LoaiSanPhamFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.NhanVienFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.SanPhamFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.ThongTinCaNhanFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.TopFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.DoanhThuFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.DonHangFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.LoaiSanPhamFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.NhanVienFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.SanPhamFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.TopFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

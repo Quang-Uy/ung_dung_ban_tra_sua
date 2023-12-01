@@ -7,21 +7,32 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DbHelper extends SQLiteOpenHelper {
 
     public DbHelper(Context context) {
-        super(context, "Duan1", null, 11);
+        super(context, "Duan1", null, 14);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Tạo bảng Admin
+//        String tAdmin = "CREATE TABLE Admin (" +
+//                "maAdmin    TEXT PRIMARY KEY," +
+//                "hoTen   TEXT NOT NULL," +
+//                "matKhau TEXT NOT NULL" +
+//                ");";
+//        db.execSQL(tAdmin);
+//        //Dữ liệu mẫu
+//        db.execSQL("INSERT INTO Admin VALUES('Admin', 'buiquanguy', '123')");
+
+        //Tạo bảng Admin
         String tAdmin = "CREATE TABLE Admin (" +
                 "maAdmin    TEXT PRIMARY KEY," +
                 "hoTen   TEXT NOT NULL," +
-                "matKhau TEXT NOT NULL" +
+                "matKhau TEXT NOT NULL," +
+                "role INTEGER NOT NULL" +
                 ");";
         db.execSQL(tAdmin);
-        //Dữ liệu mẫu
-        db.execSQL("INSERT INTO Admin VALUES('Admin', 'buiquanguy', '123')");
-
+//        //Dữ liệu mẫu
+        db.execSQL("INSERT INTO Admin VALUES('admin','Bùi Quang Uy', '123', 0)," +
+                "('anhquan', 'Phạm Anh Quân','123', 1)");
 
         //Tạo bảng nhân viên
         String tNhanVien = "CREATE TABLE NhanVien (" +

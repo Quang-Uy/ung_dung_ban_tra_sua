@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import fpoly.edu.ungdungbantrasua.DTO.Admin;
 import fpoly.edu.ungdungbantrasua.DTO.KhachHang;
 import fpoly.edu.ungdungbantrasua.Database.DbHelper;
 
@@ -82,7 +81,7 @@ public class KhachHangDAO {
     }
 
     //Sign up
-    public boolean Register(String tenDangNhap, String hoTen, String matKhau) {
+    public boolean Register(String tenDangNhap, String hoTen, String matKhau, String s) {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("tenDangNhap", tenDangNhap);
