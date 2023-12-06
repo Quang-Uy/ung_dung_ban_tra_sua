@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_DANGXUAT = 6;
 
     private int mCurrenFragment = FRAGMENT_QLSP;
-    String role;
+    String role1;
     TextView txt_user;
 
     @Override
@@ -63,6 +64,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         replaceFragment(new SanPhamFragment());
         navigationView.getMenu().findItem(R.id.nav_qlsp).setChecked(true);
+
+        Intent intent = getIntent();
+        role1 = intent.getStringExtra("role");
+        ReadFile(role1);
+        txt_user = navigationView.getHeaderView(0).findViewById(R.id.txt_user);
+        txt_user.setText("Xin chào " + role1);
     }
 
     @Override
@@ -125,5 +132,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, fragment);
         transaction.commit();
+    }
+
+    private void ReadFile(String username) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_use", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("username_user", username);
+        editor.apply();
     }
 }

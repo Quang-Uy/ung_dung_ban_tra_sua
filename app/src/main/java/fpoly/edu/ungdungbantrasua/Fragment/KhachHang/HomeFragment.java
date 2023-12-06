@@ -10,6 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -20,7 +25,10 @@ import java.util.List;
 
 import fpoly.edu.ungdungbantrasua.Adapter.DanhSachAdapter;
 import fpoly.edu.ungdungbantrasua.Adapter.SanPhamAdapter;
+import fpoly.edu.ungdungbantrasua.DAO.GioHangDAO;
 import fpoly.edu.ungdungbantrasua.DAO.SanPhamDAO;
+import fpoly.edu.ungdungbantrasua.DAO.SessionManager;
+import fpoly.edu.ungdungbantrasua.DTO.GioHang;
 import fpoly.edu.ungdungbantrasua.DTO.SanPham;
 import fpoly.edu.ungdungbantrasua.R;
 
@@ -46,11 +54,11 @@ public class HomeFragment extends Fragment {
 
         //Image slider
         ArrayList<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.slider1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.slider7, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.slider2, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.slider3, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.slider4, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.slider5, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.slider6, ScaleTypes.FIT));
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
 
         list = sanPhamDAO.getAll();

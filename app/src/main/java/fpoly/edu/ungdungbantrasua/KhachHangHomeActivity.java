@@ -6,12 +6,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
-import fpoly.edu.ungdungbantrasua.Fragment.KhachHang.DSDonHangFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.KhachHang.GioHangFragment;
 import fpoly.edu.ungdungbantrasua.Fragment.KhachHang.HomeFragment;
 import fpoly.edu.ungdungbantrasua.Fragment.KhachHang.ThongTinCaNhanFragment;
 import kotlin.Unit;
@@ -38,11 +37,11 @@ public class KhachHangHomeActivity extends AppCompatActivity {
         bottomNavigation.show(1, true);//Màn hình chính
 
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_donhang));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_giohang));
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_thongtincanhan));
 
         BottonNavigation();
-        khachhang_layout.setBackgroundColor(Color.WHITE);
+        khachhang_layout.setBackgroundColor(Color.parseColor("#FFFBF5"));
     }
 
     private void BottonNavigation() {
@@ -53,19 +52,19 @@ public class KhachHangHomeActivity extends AppCompatActivity {
                     case 1:
 
                         replace(new HomeFragment());
-                        khachhang_layout.setBackgroundColor(Color.WHITE);
+                        khachhang_layout.setBackgroundColor(Color.parseColor("#FFFBF5"));
                         break;
 
                     case 2:
 
-                        replace(new DSDonHangFragment());
-                        khachhang_layout.setBackgroundColor(Color.parseColor("#ED1515"));
+                        replace(new GioHangFragment());
+                        khachhang_layout.setBackgroundColor(Color.parseColor("#FFFBF5"));
                         break;
 
                     case 3:
 
                         replace(new ThongTinCaNhanFragment());
-                        khachhang_layout.setBackgroundColor(Color.parseColor("#00897B"));
+                        khachhang_layout.setBackgroundColor(Color.parseColor("#4F6F52"));
                         break;
                 }
 

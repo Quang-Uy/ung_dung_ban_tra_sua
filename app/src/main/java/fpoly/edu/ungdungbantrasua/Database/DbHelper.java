@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DbHelper extends SQLiteOpenHelper {
 
     public DbHelper(Context context) {
-        super(context, "Duan1", null, 14);
+        super(context, "Duan1", null, 22);
     }
 
     @Override
@@ -31,8 +31,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(tAdmin);
 //        //Dữ liệu mẫu
-        db.execSQL("INSERT INTO Admin VALUES('admin','Bùi Quang Uy', '123', 0)," +
-                "('anhquan', 'Phạm Anh Quân','123', 1)");
+        db.execSQL("INSERT INTO Admin VALUES('admin','Quản trị viên', '1234', 0)," +
+                "('quanguy', 'Quang Uy Bùi','1234', 1)");
 
         //Tạo bảng nhân viên
         String tNhanVien = "CREATE TABLE NhanVien (" +
@@ -101,6 +101,19 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO DonHang VALUES(1, 1, 1, '15/11/2023', '2', '50000', 1)," +
                 "(2, 2, 2, '10/11/2023', '1', '35000', 2)," +
                 "(3, 3, 3, '05/11/2023', '3', '90000', 1)");
+
+        //Tạo bảng giỏ hàng
+        String tb_cart = "CREATE TABLE GioHang ( " +
+                "maGioHang INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "maTraSua INTEGER REFERENCES TraSua(maTraSua), " +
+                "role INTEGER REFERENCES Admin(role), " +
+                "giaGioHang TEXT)";
+        db.execSQL(tb_cart);
+        String insert_Cart = "INSERT INTO GioHang VALUES " +
+                "(0, 2, 1, 1), " +
+                "(1, 3, 1, 1), " +
+                "(2, 1, 1, 1) ";
+        db.execSQL(insert_Cart);
     }
 
     @Override
@@ -112,6 +125,8 @@ public class DbHelper extends SQLiteOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS TraSua");
             db.execSQL("DROP TABLE IF EXISTS LoaiTraSua");
             db.execSQL("DROP TABLE IF EXISTS DonHang");
+
+            db.execSQL("DROP TABLE IF EXISTS GioHang");
             onCreate(db);
         }
     }

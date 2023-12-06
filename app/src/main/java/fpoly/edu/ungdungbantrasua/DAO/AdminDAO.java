@@ -3,6 +3,7 @@ package fpoly.edu.ungdungbantrasua.DAO;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -15,9 +16,12 @@ import fpoly.edu.ungdungbantrasua.Database.DbHelper;
 public class AdminDAO {
     private SQLiteDatabase db;
     DbHelper dbHelper;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     public AdminDAO(Context context) {
         dbHelper = new DbHelper(context);
+        sharedPreferences = context.getSharedPreferences("USERNAME", Context.MODE_PRIVATE);
         db = dbHelper.getWritableDatabase();
     }
 
@@ -31,12 +35,20 @@ public class AdminDAO {
         return check != 1;
     }
 
-    public int updatePass(Admin obj) {
-        ContentValues values = new ContentValues();
-        values.put("hoTen", obj.getHoTen());
-        values.put("matKhau", obj.getMatKhau());
-        values.put("role", obj.getRole());
-        return db.update("Admin", values, "maAdmin=?", new String[]{obj.getMaAdmin()});
+    public boolean updatePass(Admin obj) {
+//        ContentValues values = new ContentValues();
+//        values.put("hoTen", obj.getHoTen());
+//        values.put("matKhau", obj.getMatKhau());
+//        values.put("role", obj.getRole());
+//        return db.update("Admin", values, "maAdmin=?", new String[]{obj.getMaAdmin()});
+
+        ContentValues contentValues = new ContentValues();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        String dk[] = {obj.getMaAdmin()};
+        contentValues.put("hoTen", obj.getHoTen());
+        contentValues.put("matKhau", obj.getMatKhau());
+        long check = sqLiteDatabase.update("Admin", contentValues, "maAdmin=?", dk);
+        return check != -1;
     }
 
     public int delete(String id){
@@ -98,4 +110,9 @@ public class AdminDAO {
         }
 
     }
+//
+//    public void logoutCustomer() {
+//        editor.clear();
+//        editor.apply();
+//    }
 }
