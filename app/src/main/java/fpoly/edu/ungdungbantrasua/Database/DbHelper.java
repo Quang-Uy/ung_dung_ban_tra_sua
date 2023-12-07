@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DbHelper extends SQLiteOpenHelper {
 
     public DbHelper(Context context) {
-        super(context, "Duan1", null, 22);
+        super(context, "Duan1", null, 23);
     }
 
     @Override
@@ -71,9 +71,14 @@ public class DbHelper extends SQLiteOpenHelper {
                 ");";
         db.execSQL(tTraSua);
         //Dữ liệu mẫu
-        db.execSQL("INSERT INTO TraSua VALUES(1, 'Trà sữa trân châu đường đen', 1, '100', '25000')," +
-                "(2, 'Trà sữa Oolong', 2, '150', '35000')," +
-                "(3, 'Trà sữa dâu tây', 3, '240', '30000')");
+        db.execSQL("INSERT INTO TraSua VALUES(1, 'Trà sữa trân châu đường đen', 1, '6', '25000')," +
+                "(2, 'Trà sữa Oolong', 2, '9', '35000')," +
+                "(3, 'Trà sữa Nhadam', 3, '12', '30000')," +
+                "(4, 'Trà sữa Trứng muối', 2, '10', '35000')," +
+                "(5, 'Trà sữa Matcha', 3, '16', '30000')," +
+                "(6, 'Trà sữa Kem', 1, '20', '25000')," +
+                "(7, 'Trà sữa Socola', 2, '13', '35000')," +
+                "(8, 'Trà sữa dâu tây', 3, '240', '30000')");
 
         //Tạo bảng loại trà sữa
         String tLoai = "CREATE TABLE LoaiTraSua(" +

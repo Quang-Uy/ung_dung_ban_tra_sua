@@ -7,12 +7,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +44,8 @@ public class HomeFragment extends Fragment {
     private List<SanPham> sanPham = new ArrayList<SanPham>();
     private DanhSachAdapter adapter;
     List<SanPham> list;
+    EditText searchView;
+    private  List<SanPham> tempListSanPham = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
