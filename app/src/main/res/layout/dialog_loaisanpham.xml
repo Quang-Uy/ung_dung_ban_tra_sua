@@ -1,42 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp"
-    android:orientation="vertical"
-    android:background="#662549">
-
-    <EditText
-        android:id="@+id/edt_MaLoai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mã sản phẩm" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_TenLoai"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nhập tên loại sản phẩm"/>
-    </com.google.android.material.textfield.TextInputLayout>
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_dialog">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btn_huyLS"
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/nen1"/>
+        <EditText
+            android:id="@+id/edt_MaLoai"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hủy"
-            android:layout_weight="1"/>
-        <Button
-            android:id="@+id/btn_addLS"
-            android:layout_width="wrap_content"
+            android:text="MILK TEA"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#6C3428" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_TenLoai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập tên loại sản phẩm"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lưu"
-            android:layout_weight="1"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <Button
+                android:id="@+id/btn_huyLS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hủy"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/btn_addLS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lưu"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

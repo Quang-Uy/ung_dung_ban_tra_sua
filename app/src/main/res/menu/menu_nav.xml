@@ -29,9 +29,6 @@
 
     <item android:title="Người dùng">
         <menu>
-            <item android:id="@+id/nav_thongtincanhan"
-                android:title="Thông tin cá nhân"
-                android:icon="@drawable/ic_thongtincanhan"/>
             <item android:id="@+id/nav_dangxuat"
                 android:title="Đăng xuất"
                 android:icon="@drawable/ic_dangxuat"/>

@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 import fpoly.edu.ungdungbantrasua.DTO.NhanVien;
-import fpoly.edu.ungdungbantrasua.Fragment.NhanVienFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.NhanVienFragment;
 import fpoly.edu.ungdungbantrasua.R;
 
 public class NhanVienAdapter extends ArrayAdapter<NhanVien> {
@@ -44,7 +44,7 @@ public class NhanVienAdapter extends ArrayAdapter<NhanVien> {
         final NhanVien item = list.get(position);
         if (item != null) {
             tvMaNV = v.findViewById(R.id.tv_MaNV);
-            tvMaNV.setText("Mã nhân viên: "+item.getMaNhanVien());
+            tvMaNV.setText("Mã: "+item.getMaNhanVien());
             tvTenNV = v.findViewById(R.id.tv_TenNV);
             tvTenNV.setText("Tên nhân viên: "+item.getHoTen());
             tvNamSinh = v.findViewById(R.id.tv_NamSinh);

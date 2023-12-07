@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_product"
+    android:layout_width="170dp"
+    android:layout_height="230dp"
+
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:gravity="center"
+        android:background="#FFFBF5">
+
+        <ImageView
+            android:id="@+id/image_khachhang"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/item_sanpham" />
+
+        <TextView
+            android:id="@+id/tv_DSname"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="Trà sữa đường đen"
+            android:textColor="#79155B"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_DSLoai"
+            android:layout_width="match_parent"
+            android:layout_height="17dp"
+            android:gravity="center"
+            android:text="Trà sữa truyền thống"
+            android:textColor="#000"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_DSgia"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:text="23.000đ"
+                android:textColor="#F30903"
+                android:textSize="12sp"
+                android:textStyle="italic|bold"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="25dp"/>
+
+            <ImageView
+                android:id="@+id/tv_datHang"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_cart" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

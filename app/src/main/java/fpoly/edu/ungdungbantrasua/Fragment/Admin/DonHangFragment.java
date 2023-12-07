@@ -1,15 +1,10 @@
-package fpoly.edu.ungdungbantrasua.Fragment;
+package fpoly.edu.ungdungbantrasua.Fragment.Admin;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +16,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -118,7 +117,7 @@ public class DonHangFragment extends Fragment {
         chk_trangThai = dialog.findViewById(R.id.chk_trangThai);
         btn_addDH = dialog.findViewById(R.id.btn_addDonHang);
         btn_huyDH = dialog.findViewById(R.id.btn_huyDonHang);
-        //set Ngay thue mac dinh
+        //set Ngay mac dinh
         tv_Ngay.setText("Ngày đặt: "+sdf.format(new Date()));
 
         //Spinner khách hàng
@@ -177,7 +176,7 @@ public class DonHangFragment extends Fragment {
                 }
             spnSanPham.setSelection(positionSanPham);
             tv_Ngay.setText("Ngày: "+sdf.format(item.getNgay()));
-//            tv_soLuong.setText("Số lượng: "+item.getSoLuong());
+            tv_soLuong.setText("Số lượng: "+item.getSoLuong());
             tv_gia.setText("Giá: "+item.getGia());
             if (item.getTrangThai()==1){
                 chk_trangThai.setChecked(true);
@@ -195,8 +194,8 @@ public class DonHangFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 item = new DonHang();
-                item.setMaTraSua(maSanPham);
                 item.setMaKH(maKhachHang);
+                item.setMaTraSua(maSanPham);
                 item.setNgay(new Date());
                 item.setSoLuong(soLuong); //***
                 item.setGia(gia);

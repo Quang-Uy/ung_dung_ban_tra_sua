@@ -1,64 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_dialog">
 
-    <EditText
-        android:id="@+id/edt_MaDonHang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mã phiếu mượn"/>
-    <Spinner
-        android:id="@+id/spn_MaKhachHang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Spinner
-        android:id="@+id/spn_MaTraSua"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/tv_ngay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ngày: "/>
-    <TextView
-        android:id="@+id/tv_soLuong"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Số lượng: "/>
-    <TextView
-        android:id="@+id/tv_gia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Giá: "/>
-    <CheckBox
-        android:id="@+id/chk_trangThai"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đã xử lý"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
-
-        <Button
-            android:id="@+id/btn_addDonHang"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lưu"
-            android:layout_marginHorizontal="20dp"
-            android:layout_weight="1"/>
+            android:orientation="vertical"
+            android:padding="10dp">
 
-        <Button
-            android:id="@+id/btn_huyDonHang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hủy"
-            android:layout_marginHorizontal="20dp"
-            android:layout_weight="1"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/nen1"/>
 
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/edt_MaDonHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MILK TEA"
+                    android:textStyle="bold"
+                    android:textColor="#6C3428"
+                    android:gravity="center"/>
+                <Spinner
+                    android:id="@+id/spn_MaKhachHang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"/>
+                <Spinner
+                    android:id="@+id/spn_MaTraSua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/tv_ngay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Ngày: "
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tv_soLuong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Số lượng: "
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tv_gia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Giá: "
+                    android:textColor="@color/black"/>
+                <CheckBox
+                    android:id="@+id/chk_trangThai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Đã xử lý"
+                    android:textColor="@color/black"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="20dp">
 
-</LinearLayout>
+                        <Button
+                            android:id="@+id/btn_addDonHang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lưu"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="1"/>
+
+                        <Button
+                            android:id="@+id/btn_huyDonHang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hủy"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="1"/>
+
+                </LinearLayout>
+
+        </LinearLayout>
+
+</RelativeLayout>

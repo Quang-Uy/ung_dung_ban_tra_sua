@@ -54,7 +54,7 @@ public class TopAdapter extends BaseAdapter {
         }
         Top top = list.get(position);
         if (top != null) {
-            top10ViewHolder.txt_tenSanPham.setText("Tên Sản phẩm :" + list.get(position).tenTraSua);
+            top10ViewHolder.txt_tenSanPham.setText("Sản phẩm :" + list.get(position).tenTraSua);
             top10ViewHolder.txt_soLuong.setText("Số lượng :" + list.get(position).soLuong);
         }
         return convertView;

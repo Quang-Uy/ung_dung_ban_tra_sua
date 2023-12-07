@@ -5,17 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import fpoly.edu.ungdungbantrasua.DAO.AdminDAO;
 import fpoly.edu.ungdungbantrasua.DAO.KhachHangDAO;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private KhachHangDAO khachHangDAO;
+    private AdminDAO adminDAO;
     TextView tv_Signin;
+    Spinner spinner_role;
+    String value_role;
+    int role_position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +38,26 @@ public class SignUpActivity extends AppCompatActivity {
         Button btnSignUp = findViewById(R.id.btn_signup);
         tv_Signin = findViewById(R.id.tv_sign_in);
         
-        khachHangDAO = new KhachHangDAO(this);
+        adminDAO = new AdminDAO(this);
+
+        spinner_role = findViewById(R.id.spinner_role);
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Quản trị viên");
+        list.add("Người dùng");
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, list);
+        spinner_role.setAdapter(adapter);
+        spinner_role.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                role_position = position;
+                value_role = list.get(position);
+                Toast.makeText(SignUpActivity.this, role_position + value_role, Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if (ten.isEmpty()||tendangnhap.isEmpty()||matkhau.isEmpty()) {
                     Toast.makeText(SignUpActivity.this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 } else {
-                    boolean check = khachHangDAO.Register(ten, tendangnhap, matkhau);
+                    boolean check = adminDAO.Register(ten, tendangnhap, matkhau, String.valueOf(role_position));
                     if (check) {
                         Toast.makeText(SignUpActivity.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
                         finish();

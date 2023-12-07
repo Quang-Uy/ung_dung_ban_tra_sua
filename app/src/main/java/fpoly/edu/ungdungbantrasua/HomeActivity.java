@@ -18,13 +18,12 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-import fpoly.edu.ungdungbantrasua.Fragment.DoanhThuFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.DonHangFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.LoaiSanPhamFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.NhanVienFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.SanPhamFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.ThongTinCaNhanFragment;
-import fpoly.edu.ungdungbantrasua.Fragment.TopFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.DoanhThuFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.DonHangFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.LoaiSanPhamFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.NhanVienFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.SanPhamFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.TopFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,11 +34,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_QLNV = 3;
     private static final int FRAGMENT_TOP = 4;
     private static final int FRAGMENT_DOANHTHU = 5;
-    private static final int FRAGMENT_THONGTINCANHAN = 6;
-    private static final int FRAGMENT_DANGXUAT = 7;
+    private static final int FRAGMENT_DANGXUAT = 6;
 
     private int mCurrenFragment = FRAGMENT_QLSP;
-    String role;
+    String role1;
     TextView txt_user;
 
     @Override
@@ -66,6 +64,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         replaceFragment(new SanPhamFragment());
         navigationView.getMenu().findItem(R.id.nav_qlsp).setChecked(true);
+
+        Intent intent = getIntent();
+        role1 = intent.getStringExtra("role");
+        ReadFile(role1);
+        txt_user = navigationView.getHeaderView(0).findViewById(R.id.txt_user);
+        txt_user.setText("Xin chào " + role1);
     }
 
     @Override
@@ -102,11 +106,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 replaceFragment(new DoanhThuFragment());
                 mCurrenFragment = FRAGMENT_DOANHTHU;
             }
-        } else if (id == R.id.nav_thongtincanhan) {
-            if (mCurrenFragment != FRAGMENT_THONGTINCANHAN) {
-                replaceFragment(new ThongTinCaNhanFragment());
-                mCurrenFragment = FRAGMENT_THONGTINCANHAN;
-            }
         } else if (id == R.id.nav_dangxuat) {
             startActivity(new Intent(HomeActivity.this, LoginActivity.class));
         }
@@ -133,5 +132,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame, fragment);
         transaction.commit();
+    }
+
+    private void ReadFile(String username) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_use", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("username_user", username);
+        editor.apply();
     }
 }

@@ -10,13 +10,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
-import java.util.SplittableRandom;
 
 import fpoly.edu.ungdungbantrasua.DTO.LoaiSanPham;
-import fpoly.edu.ungdungbantrasua.Fragment.LoaiSanPhamFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.LoaiSanPhamFragment;
 import fpoly.edu.ungdungbantrasua.R;
 
 public class LoaiSanPhamAdapter extends ArrayAdapter<LoaiSanPham> {
@@ -44,7 +42,7 @@ public class LoaiSanPhamAdapter extends ArrayAdapter<LoaiSanPham> {
         final LoaiSanPham item = list.get(position);
         if (item != null){
             tv_maLoaiSanPham = v.findViewById(R.id.tv_maLoaiSanPham);
-            tv_maLoaiSanPham.setText("Mã loại: "+item.getMaLoai());
+            tv_maLoaiSanPham.setText("Mã: "+item.getMaLoai());
             tv_tenLoaiSanPham = v.findViewById(R.id.tv_tenLoaiSanPham);
             tv_tenLoaiSanPham.setText("Tên loại: "+item.getTenLoai());
 

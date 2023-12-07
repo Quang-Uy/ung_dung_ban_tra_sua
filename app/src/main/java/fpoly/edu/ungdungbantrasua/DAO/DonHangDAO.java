@@ -29,7 +29,7 @@ public class DonHangDAO {
 
     public long insert(DonHang obj) {
         ContentValues values = new ContentValues();
-//        values.put("maDonHang", obj.getMaDonHang());
+       // values.put("maDonHang", obj.getMaDonHang());
         values.put("maKH", obj.getMaKH());
         values.put("maTraSua", obj.getMaTraSua());
         values.put("ngay", sdf.format(obj.getNgay()));

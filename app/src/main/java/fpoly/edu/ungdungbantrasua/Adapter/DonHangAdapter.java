@@ -21,7 +21,7 @@ import fpoly.edu.ungdungbantrasua.DAO.SanPhamDAO;
 import fpoly.edu.ungdungbantrasua.DTO.DonHang;
 import fpoly.edu.ungdungbantrasua.DTO.KhachHang;
 import fpoly.edu.ungdungbantrasua.DTO.SanPham;
-import fpoly.edu.ungdungbantrasua.Fragment.DonHangFragment;
+import fpoly.edu.ungdungbantrasua.Fragment.Admin.DonHangFragment;
 import fpoly.edu.ungdungbantrasua.R;
 
 public class DonHangAdapter extends ArrayAdapter<DonHang> {
@@ -59,7 +59,7 @@ public class DonHangAdapter extends ArrayAdapter<DonHang> {
             sanPhamDAO = new SanPhamDAO(context);
             SanPham sanPham = sanPhamDAO.getID(String.valueOf(item.getMaTraSua()));
             tv_TenSanPham= v.findViewById(R.id.tv_TenSanPham);
-            tv_TenSanPham.setText("Tên sản phẩm: "+sanPham.getTenTraSua());
+            tv_TenSanPham.setText("Sản phẩm: "+sanPham.getTenTraSua());
             khachHangDAO = new KhachHangDAO(context);
             KhachHang khachHang = khachHangDAO.getID(String.valueOf(item.getMaKH()));
             tv_TenKH = v.findViewById(R.id.tv_TenKH);
